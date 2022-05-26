@@ -1,2 +1,2 @@
 # dsa
-Implementations of classic data structures and algoritms
+Implementations of classic data structures and algorithms
