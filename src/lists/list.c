@@ -11,6 +11,17 @@ sl_list_t* create_sl_list_node()
     return node;
 }
 
+void delete_sl_list(sl_list_t* head)
+{
+    sl_list_t* cur = head;
+    while (cur != NULL)
+    {
+        sl_list_t* tmp = cur->next;
+        free(cur);
+        cur = tmp;
+    }
+}
+
 sl_list_t* create_sl_list_valued_node(int val)
 {
     sl_list_t* node = create_sl_list_node();
