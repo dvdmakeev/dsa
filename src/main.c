@@ -1,16 +1,17 @@
-#include "lists/list.h"
+#include "arrays/array_list.h"
+
+#include <stdio.h>
 
 int main()
 {
-    sl_list_t* head = create_sl_list();
-    head->val = 10;
+    array_list_t* arr = arr_list_create();
 
-    for (int i = 9; i >= 0; --i)
+    for (int i = 0; i < 15; ++i)
     {
-        append_sl_list(head, i);
+        arr_list_append(i, arr);
     }
 
-    print_sl_list(head);
+    arr_list_print(arr);
 
     return 0;
 }
