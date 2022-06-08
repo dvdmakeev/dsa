@@ -30,7 +30,7 @@ void arr_list_set(int i, int n, array_list_t* arr_list)
     arr_list->array[i] = n;
 }
 
-void increase_capicity_if_needed(array_list_t* arr_list)
+void increase_capacity_if_needed(array_list_t* arr_list)
 {
     if (arr_list->last_i + 1 >= arr_list->size)
     {
@@ -42,7 +42,7 @@ void increase_capicity_if_needed(array_list_t* arr_list)
 
 void arr_list_append(int n, array_list_t* arr_list)
 {
-    increase_capicity_if_needed(arr_list);
+    increase_capacity_if_needed(arr_list);
 
     arr_list->last_i += 1;
     arr_list->array[arr_list->last_i] = n;
