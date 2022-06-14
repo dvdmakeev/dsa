@@ -8,7 +8,7 @@ typedef struct uf {
 
 uf_t* create_uf(int n);
 
-void delete_uf(uf_t* uf)
+void delete_uf(uf_t* uf);
 
 void union_items(uf_t* uf, int p, int q);
 
