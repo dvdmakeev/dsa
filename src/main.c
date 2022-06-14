@@ -1,17 +1,19 @@
-#include "arrays/array_list.h"
+//#include "union_find/uf.h"
 
 #include <stdio.h>
 
 int main()
 {
-    array_list_t* arr = arr_list_create();
+    printf("This is a program to test UnionFind algorithm. Please, type a number of components.\nN=");
 
-    for (int i = 0; i < 15; ++i)
+    int n = 0;
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; ++i)
     {
-        arr_list_append(i, arr);
+        int p = 0;
+        int q = 0;
+        scanf("%d %d", &p, &q);
+        printf("\n");
     }
-
-    arr_list_print(arr);
-
-    return 0;
 }
