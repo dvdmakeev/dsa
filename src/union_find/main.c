@@ -37,6 +37,11 @@ int test_base()
         return -1;
     }
 
+    if (!connected(uf, 9, 9))
+    {
+        return -1;
+    }
+
     return 0;
 }
 
