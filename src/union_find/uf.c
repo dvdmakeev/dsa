@@ -22,22 +22,27 @@ void delete_uf(uf_t* uf)
     free(uf);
 }
 
+int root(uf_t* uf, int p)
+{
+    while (uf->items[p] != p)
+    {
+        p = uf->items[p];
+    }
+
+    return p;
+}
+
 void union_items(uf_t* uf, int p, int q)
 {
-    int pid = uf->items[p];
-    int qid = uf->items[q];
-    for (int i = 0; i < uf->n; ++i)
-    {
-        if (uf->items[i] == pid)
-        {
-            uf->items[i] = qid;
-        }
-    }
+    int root_p = root(uf, p);
+    int root_q = root(uf, q);
+
+    uf->items[root_p] = root_q;
 }
 
 int connected(uf_t* uf, int p, int q)
 {
-    return uf->items[p] == uf->items[q];
+    return root(uf, p) == root(uf, q);
 }
 
 int find_connected_component(uf_t* uf, int p)
