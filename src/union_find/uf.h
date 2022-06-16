@@ -4,6 +4,7 @@
 typedef struct uf {
     int n;
     int* items;
+    int* size;
 } uf_t;
 
 uf_t* create_uf(int n);
