@@ -50,10 +50,25 @@ void arr_list_append(int n, array_list_t* arr_list)
 
 void arr_list_insert(int i, int n, array_list_t* arr_list)
 {
+    increase_capacity_if_needed(arr_list);
+
+    for (int j = arr_list->last_i + 1; j > i; --j)
+    {
+        arr_list->array[j] = arr_list->array[j - 1];
+    }
+
+    arr_list->array[i] = n;
+    ++arr_list->last_i;
 }
 
 void arr_list_remove(int i, array_list_t* arr_list)
 {
+    for (int j = i; j < arr_list->last_i; ++j)
+    {
+        arr_list->array[j] = arr_list->array[j + 1];
+    }
+
+    --arr_list->last_i;
 }
 
 int arr_list_size(array_list_t* arr_list)
