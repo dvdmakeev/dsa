@@ -1,8 +1,10 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-typedef struct queue{
+#include "../arrays/array_list.h"
 
+typedef struct queue{
+    array_list_t* queue_arr;
 } queue_t;
 
 queue_t* create_queue();
