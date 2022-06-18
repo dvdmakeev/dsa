@@ -55,6 +55,19 @@ void append_sl_list(sl_list_t* head, int val)
     old_tail->next = new_tail;
 }
 
+int size_sl_list(sl_list_t* head)
+{
+    int size = 0;
+    sl_list_t* cur_node = head;
+    while (cur_node != NULL)
+    {
+        cur_node = cur_node->next;
+        ++size;
+    }
+
+    return size;
+}
+
 void print_sl_list(sl_list_t* head)
 {
     if (head == NULL)
