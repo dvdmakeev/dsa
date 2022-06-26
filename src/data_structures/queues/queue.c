@@ -24,11 +24,10 @@ void enqueue(queue_t* queue, int val)
 
 int dequeue(queue_t* queue)
 {
-    int arr_size = arr_list_size(queue->queue_arr);
-    int last = arr_list_get(arr_size - 1, queue->queue_arr);
-    arr_list_remove(arr_size - 1, queue->queue_arr);
+    int first = arr_list_get(0, queue->queue_arr);
+    arr_list_remove(0, queue->queue_arr);
 
-    return last;
+    return first;
 }
 
 int is_empty(queue_t* queue)
